@@ -8,4 +8,4 @@ steps:
     secrets:
       - TE_API_KEY
     env:
-      BUILDKITE_ANALYTICS_TOKEN: $TE_API_KEY
+      BUILDKITE_ANALYTICS_TOKEN: "1DttPJ9dNxHYzDWDAVq5e4YZ"
