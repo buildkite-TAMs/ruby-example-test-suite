@@ -1,0 +1,11 @@
+steps:
+  - label: ":rspec: Run tests"
+    command: |
+      bundle install
+      bundle exec rspec
+    agents:
+      queue: "hosted-queue"  
+    secrets:
+      - TE_API_KEY
+    env:
+      BUILDKITE_ANALYTICS_TOKEN: $$TE_API_KEY
