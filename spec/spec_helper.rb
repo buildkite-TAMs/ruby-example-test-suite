@@ -1,5 +1,9 @@
 require 'yaml'
 require 'json'
+require 'buildkite/test_collector'
+
+Buildkite::TestCollector.configure(hook: :rspec)
+
 
 begin
   skip_data = File.read('skipped.json')
