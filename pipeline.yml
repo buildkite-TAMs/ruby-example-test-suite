@@ -1,6 +1,8 @@
 steps:
   - label: ":rspec: Run tests"
     command: |
+      brew tap buildkite/buildkite
+      brew install buildkite/buildkite/bktec
       bundle install
       bundle exec rspec
       bktec run
