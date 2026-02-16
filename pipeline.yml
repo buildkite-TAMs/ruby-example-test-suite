@@ -3,9 +3,13 @@ steps:
     command: |
       bundle install
       bundle exec rspec
+      bktec run
+    parallelism: 5  
     agents:
       queue: "hosted-queue"  
     secrets:
       BUILDKITE_ANALYTICS_TOKEN: TE_API_KEY
-    # env:
-    #   BUILDKITE_ANALYTICS_TOKEN: "$$TE_API_KEY"
+    env:
+        BUILDKITE_TEST_ENGINE_SUITE_SLUG: "test-engine-demo"  
+        BUILDKITE_TEST_ENGINE_TEST_RUNNER: "rspec"
+        BUILDKITE_TEST_ENGINE_RESULT_PATH: "tmp/rspec-result.json"
