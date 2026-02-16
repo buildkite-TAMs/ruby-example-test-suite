@@ -1,18 +1,18 @@
 steps:
   - label: ":rspec: Run tests"
     command: |
-      brew tap buildkite/buildkite
-      brew install buildkite/buildkite/bktec
+      # brew tap buildkite/buildkite
+      # brew install buildkite/buildkite/bktec
       bundle install
       bundle exec rspec
-      bktec run
+      # bktec run
     parallelism: 5  
     agents:
       queue: "hosted-queue"  
     secrets:
       BUILDKITE_ANALYTICS_TOKEN: TE_API_KEY
-      BUILDKITE_TEST_ENGINE_API_ACCESS_TOKEN: TE_BKTEC
-    env:
-        BUILDKITE_TEST_ENGINE_SUITE_SLUG: "test-engine-demo"  
-        BUILDKITE_TEST_ENGINE_TEST_RUNNER: "rspec"
-        BUILDKITE_TEST_ENGINE_RESULT_PATH: "tmp/rspec-result.json"
+    #   BUILDKITE_TEST_ENGINE_API_ACCESS_TOKEN: TE_BKTEC
+    # env:
+    #     BUILDKITE_TEST_ENGINE_SUITE_SLUG: "test-engine-demo"  
+    #     BUILDKITE_TEST_ENGINE_TEST_RUNNER: "rspec"
+    #     BUILDKITE_TEST_ENGINE_RESULT_PATH: "tmp/rspec-result.json"
